@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "eina";
+  src: url("./fonts/eina-01-bold.woff2") format("woff2");
+}
+
+.message-card {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  right: 0;
+}
+
+.cluster-marker {
+  color: rgb(0, 0, 0);
+  background: #FF6F6F;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "eina";
+  transition: all .2s ease-in-out;
+}
+
+.cluster-marker:hover{
+    justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: #ff4e4e;
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+
+.scooter-marker {
+    transition: all .2s ease-in-out;
+  background: none;
+  border: none;
+}
+.scooter-marker:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.scooter-marker img {
+  width: 27px;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
