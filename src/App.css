@@ -12,7 +12,7 @@
 
 .cluster-marker {
   color: rgb(0, 0, 0);
-  background: #FF6F6F;
+  background: #ff6f6f;
   font-size: 12px;
   border-radius: 50%;
   padding: 10px;
@@ -20,11 +20,11 @@
   justify-content: center;
   align-items: center;
   font-family: "eina";
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.cluster-marker:hover{
-    justify-content: center;
+.cluster-marker:hover {
+  justify-content: center;
   align-items: center;
   cursor: pointer;
   background: #ff4e4e;
@@ -33,12 +33,12 @@
 }
 
 .scooter-marker {
-    transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   background: none;
   border: none;
 }
 .scooter-marker:hover {
-  transform: scale(1.1);
+  transform: scale(1.4);
   cursor: pointer;
 }
 
@@ -50,4 +50,22 @@
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
+}
+
+.hero-container {
+  position: absolute;
+  padding: 0;
+  color: white;
+  top: 0;
+  left: 50px;
+  z-index: 999;
+}
+.logo {
+  color: #bbbbbb;
+  font-size: 42px;
+  text-shadow: 1px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo strong {
+  color: #ee7874;
 }

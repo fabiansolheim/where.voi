@@ -7,7 +7,6 @@ import ReactMapGL, {
 } from "react-map-gl";
 import useSupercluster from "use-supercluster";
 
-
 const { REACT_APP_MAPBOX_TOKEN } = process.env;
 
 function App() {
@@ -26,8 +25,7 @@ function App() {
   };
 
   const [voiScooters, setVoiScooters] = useState([]);
-  const voiUrl =
-    "https://api.entur.io/mobility/v2/gbfs/voioslo/free_bike_status";
+  const voiUrl = "https://api.entur.io/mobility/v2/gbfs/voi/free_bike_status";
 
   const points = voiScooters.map((voi) => ({
     type: "Feature",
@@ -65,6 +63,12 @@ function App() {
 
   return (
     <div className="App">
+      <div className="hero-container">
+        <h1 className="logo">
+          where
+          <strong>.voi</strong>
+        </h1>
+      </div>
       <ReactMapGL
         {...viewport}
         mapStyle="mapbox://styles/mapbox/dark-v10"
