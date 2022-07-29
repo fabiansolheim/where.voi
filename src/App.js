@@ -5,9 +5,11 @@ import ReactMapGL, {
   FlyToInterpolator,
   NavigationControl,
 } from "react-map-gl";
+
 import useSupercluster from "use-supercluster";
 
 const { REACT_APP_MAPBOX_TOKEN } = process.env;
+console.log(REACT_APP_MAPBOX_TOKEN);
 
 function App() {
   const [viewport, setViewport] = useState({
