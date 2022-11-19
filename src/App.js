@@ -21,7 +21,7 @@ function App() {
   const mapRef = useRef();
 
   const navControlStyle = {
-    zIndex: 10,
+    position: "absolute",
     right: 10,
     top: 10,
   };
@@ -29,8 +29,8 @@ function App() {
   const [voiScooters, setVoiScooters] = useState([]);
   const voiUrl = "https://api.entur.io/mobility/v2/gbfs/voi/free_bike_status";
 
-  const points = voiScooters.map((voi) => ({
-    key: voi.bike_id,
+  const points = voiScooters.map((voi, index) => ({
+    key: index,
     type: "Feature",
     properties: {
       cluster: false,
@@ -83,7 +83,9 @@ function App() {
         }}
         ref={mapRef}
       >
-        <NavigationControl style={navControlStyle} />
+        <div style={{position: "absolute", right: 20, top: 20, zIndex: 10}}>
+        <NavigationControl style={{border: "2px red solid"}}  />
+        </div>
         {clusters.map((cluster) => {
           const [longitude, latitude] = cluster.geometry.coordinates;
           const { cluster: isCluster, point_count: pointCount } =
@@ -92,7 +94,6 @@ function App() {
           if (isCluster) {
             return (
               <Marker
-                style={{zIndex: 1}}
                 key={cluster.id}
                 latitude={latitude}
                 longitude={longitude}
