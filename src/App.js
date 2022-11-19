@@ -60,12 +60,6 @@ function App() {
 
   return (
     <div className="App">
-      <div className="hero-container">
-        <h1 className="logo">
-          where
-          <strong>.voi</strong>
-        </h1>
-      </div>
       <ReactMapGL
                     style={{zIndex: 2}}
         {...viewport}
@@ -77,8 +71,14 @@ function App() {
         }}
         ref={mapRef}
       >
-        <div style={{position: "absolute", right: 20, top: 20, zIndex: 10}}>
-        <NavigationControl style={{border: "2px red solid"}}  />
+        <div style={{display: "flex", justifyContent: "center"}}>
+        <div style={{ alignItems: "center", zIndex: "10", display: "flex", justifyContent: "space-between", width: "95%", height: "fit-content"}}>
+        <h1 className="logo">
+          where
+          <strong>.voi</strong>
+        </h1>
+        <NavigationControl />
+        </div>
         </div>
         {clusters.map((cluster) => {
           const [longitude, latitude] = cluster.geometry.coordinates;
@@ -127,7 +127,7 @@ function App() {
               longitude={longitude}
             >
               <button className="scooter-marker">
-                <img src="./voi.png" alt="" />
+                <img rel="preload" src="./voi.png" alt="" />
               </button>
             </Marker>
           );
