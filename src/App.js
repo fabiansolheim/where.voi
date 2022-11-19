@@ -21,6 +21,7 @@ function App() {
   const mapRef = useRef();
 
   const navControlStyle = {
+    zIndex: 10,
     right: 10,
     top: 10,
   };
@@ -29,6 +30,7 @@ function App() {
   const voiUrl = "https://api.entur.io/mobility/v2/gbfs/voi/free_bike_status";
 
   const points = voiScooters.map((voi) => ({
+    key: voi.bike_id,
     type: "Feature",
     properties: {
       cluster: false,
@@ -71,6 +73,7 @@ function App() {
         </h1>
       </div>
       <ReactMapGL
+                    style={{zIndex: 2}}
         {...viewport}
         mapStyle="mapbox://styles/mapbox/dark-v10"
         maxZoom={20}
@@ -89,6 +92,7 @@ function App() {
           if (isCluster) {
             return (
               <Marker
+                style={{zIndex: 1}}
                 key={cluster.id}
                 latitude={latitude}
                 longitude={longitude}
