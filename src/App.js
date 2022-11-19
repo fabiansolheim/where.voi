@@ -20,12 +20,6 @@ function App() {
   });
   const mapRef = useRef();
 
-  const navControlStyle = {
-    position: "absolute",
-    right: 10,
-    top: 10,
-  };
-
   const [voiScooters, setVoiScooters] = useState([]);
   const voiUrl = "https://api.entur.io/mobility/v2/gbfs/voi/free_bike_status";
 
